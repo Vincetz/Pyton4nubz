@@ -9,3 +9,5 @@ elif thislist[1] % 1 > 0:
 else:
     thislist2 = list(range(int(thislist[0]//1 + 1), int((thislist[1]))))
     print(thislist2)
+    
+    #Код написан в кооперации с Варбанцом
