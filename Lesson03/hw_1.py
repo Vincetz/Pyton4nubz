@@ -8,7 +8,7 @@ def calc(n):
 
 
 if name == 'main':
-print('Калькулятор длинны целого числа.')
+    print('Калькулятор длинны целого числа.')
 while True:
     try:
         n = int(input('Введите число: '))
