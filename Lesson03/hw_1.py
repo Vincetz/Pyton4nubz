@@ -7,7 +7,7 @@ def calc(n):
     return res
 
 
-if name == 'main':
+if __name__ == '__main__':
     print('Калькулятор длинны целого числа.')
 while True:
     try:
