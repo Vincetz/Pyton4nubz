@@ -7,7 +7,7 @@ def nok(a, b):
             b %= a
     return m // (a+b)
 
-if name == 'main':
+if __name__ == '__main__':
     while True:
         try:
             x, y = [int(x) for x in input("Укажите 2 числа: ").split()]
