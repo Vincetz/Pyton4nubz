@@ -51,29 +51,31 @@ def text_stat(text, *args):
     return text_stat
 
 
-print("Программа подсчёта статистики теста!\nВведиет текс!:")
+if __name__ == '__main__':
 
-text = ""
-stopword = ""
-while True:
-    line = input()
-    if line.strip() == stopword:
-        break
-    text += "%s\n" % line
+    print("Программа подсчёта статистики теста!\nВведиет текс!:")
 
-arg = input(str("АРГУМЕНТ ЧЁЁ ПОПУТАЛ?!"))
-digit = text_stat(text, arg).get("digit_stat")
-line_ = text_stat(text, arg).get("line_stat")
-char = text_stat(text, arg).get("chars_stat")
-word = text_stat(text, arg).get("words_stat")
-print("="*40, "\n")
-print(''.join(['%s = %s \n' % (key, value) for (key, value) in digit.items()]))
-print(''.join(['%s = %s \n' % (key, value) for (key, value) in line_.items()]))
-print("="*40)
-print("===== Начало = Словаря = Символов =====")
-print(''.join(['%r = %s \n' % (key, value) for (key, value) in char.items()]))
-print("====== Конец = Словаря = Символов ======")
-print("="*40,)
-print("======= Начало = Словаря = Слов =======")
-print(''.join(['%r = %s \n' % (key, value) for (key, value) in word.items()]))
-print("======== Конец = Словаря = Слов ========")
+    text = ""
+    stopword = ""
+    while True:
+        line = input()
+        if line.strip() == stopword:
+            break
+        text += "%s\n" % line
+
+    arg = input(str("АРГУМЕНТ ЧЁЁ ПОПУТАЛ?!"))
+    digit = text_stat(text, arg).get("digit_stat")
+    line_ = text_stat(text, arg).get("line_stat")
+    char = text_stat(text, arg).get("chars_stat")
+    word = text_stat(text, arg).get("words_stat")
+    print("="*40, "\n")
+    print(''.join(['%s = %s \n' % (key, value) for (key, value) in digit.items()]))
+    print(''.join(['%s = %s \n' % (key, value) for (key, value) in line_.items()]))
+    print("="*40)
+    print("===== Начало = Словаря = Символов =====")
+    print(''.join(['%r = %s \n' % (key, value) for (key, value) in char.items()]))
+    print("====== Конец = Словаря = Символов ======")
+    print("="*40,)
+    print("======= Начало = Словаря = Слов =======")
+    print(''.join(['%r = %s \n' % (key, value) for (key, value) in word.items()]))
+    print("======== Конец = Словаря = Слов ========")
