@@ -15,10 +15,12 @@ def char_count(text3, thisnumberlist ):
 
 
 def text_stat(text, *args):
-    textargs = ""
-    textargs += "%s" % args
+    textargs = ''.join(['%s' % c for c in args])
     fulltext = text + "" + textargs
     fulltext = fulltext.casefold()
+    textargs2 = ''.join(['%s ' % c for c in args])
+    fulltext2 = text + "" + textargs2
+    fulltext2 = fulltext2.casefold()
     linecount = {"Количество строк": fulltext.count("\n")}
     text1 = list(fulltext)
     text2 = set(text1)
@@ -30,9 +32,9 @@ def text_stat(text, *args):
     for x in text3:
         thisnumberlist.append(fulltext.count(x))
 
-    text4 = ''.join([c for c in fulltext if c not in ('!', '?', '.', ',', '/', '\\', '>', '<', '|', ';', ':', '{', '}',
-                                                      '[',']', '=', '+', '-', '(', ')', '*', '^', '%', '$', '`', '~',
-                                                      "'", '"')])
+    text4 = ''.join([c for c in fulltext2 if c not in ('!', '?', '.', ',', '/', '\\', '>', '<', '|', ';', ':', '{', '}',
+                                                       '[', ']', '=', '+', '-', '(', ')', '*', '^', '%', '$', '`', '~',
+                                                       "'", '"')])
     text4 = text4.replace("\n", " ")
     text4 = text4.replace("\t", " ")
     text4 = text4.split(" ")
@@ -63,10 +65,10 @@ if __name__ == '__main__':
             break
         text += "%s\n" % line
 
-    digit = text_stat(text, arg).get("digit_stat")
-    line_ = text_stat(text, arg).get("line_stat")
-    char = text_stat(text, arg).get("chars_stat")
-    word = text_stat(text, arg).get("words_stat")
+    digit = text_stat(text).get("digit_stat")
+    line_ = text_stat(text).get("line_stat")
+    char = text_stat(text).get("chars_stat")
+    word = text_stat(text).get("words_stat")
     print("="*40, "\n")
     print(''.join(['%s = %s \n' % (key, value) for (key, value) in digit.items()]))
     print(''.join(['%s = %s \n' % (key, value) for (key, value) in line_.items()]))
@@ -78,3 +80,4 @@ if __name__ == '__main__':
     print("======= Начало = Словаря = Слов =======")
     print(''.join(['%r = %s \n' % (key, value) for (key, value) in word.items()]))
     print("======== Конец = Словаря = Слов ========")
+
