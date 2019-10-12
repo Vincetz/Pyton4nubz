@@ -63,7 +63,6 @@ if __name__ == '__main__':
             break
         text += "%s\n" % line
 
-    arg = input(str("АРГУМЕНТ ЧЁЁ ПОПУТАЛ?!"))
     digit = text_stat(text, arg).get("digit_stat")
     line_ = text_stat(text, arg).get("line_stat")
     char = text_stat(text, arg).get("chars_stat")
