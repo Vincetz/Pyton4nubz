@@ -40,8 +40,8 @@ def text_stat(text, *args):
     text4 = text4.split(" ")
     text5 = set(text4)
     text6 = list(text5)
-    text6.sort()
-    text6.remove("")
+    x = text.index("")
+    text6.pop(x)
 
     thisnumberlist2 = []
     for x in text6:
